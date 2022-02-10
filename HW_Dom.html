@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" name="button" id="btn">Press on</button>
+  <div class="container"></div>
+
+
+  <script>
+    const btn = document.querySelector('#btn');
+    const container = document.querySelector('.container');
+    let containerChilds = container.childNodes;
+    btn.onclick = function () {
+        if (containerChilds.length<10) {
+          div1 = document.createElement("div");
+          div1.innerHTML = "Это текст";
+          div1.setAttribute("class","child");
+          div1.style.border = "1px solid black"
+          container.append(div1)
+        }
+        else {
+          containerChildsDel = document.querySelectorAll(".child");
+          containerChildsDel.forEach(item => container.removeChild(item))
+        }
+    }
+  </script>
+</body>
+</html>
